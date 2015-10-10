@@ -5,16 +5,27 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Miryung Yeon on 2015-10-09.
+ * Created by Miryung Yeon on 2015-10-10.
  */
+
 @EqualsAndHashCode
-public class Address {
+public class Medicine {
+
     @Getter @Setter
     int id;
     @Getter @Setter
-    String name;
+    String title;
+
     @Getter @Setter
-    String tel;
+    int morning;
+
     @Getter @Setter
-    String address;
+    int afternoon;
+
+    @Getter @Setter
+    int evening;
+
+    @Getter @Setter
+    String sound;
+
 }

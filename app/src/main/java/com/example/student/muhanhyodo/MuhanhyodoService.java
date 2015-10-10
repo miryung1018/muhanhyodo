@@ -20,9 +20,34 @@ public interface MuhanhyodoService {
 //            Callback<List<Contributor>> callback
 //    );
 
-@GET("/address")
+    @GET("/address")
     void address(
             Callback<List<Address>> callback
+    );
+
+    @GET("/medicine")
+    void medicine(
+            Callback<List<Medicine>> callback
+    );
+
+    @GET("/user")
+    void user(
+            Callback<List<User>> callback
+    );
+
+    @GET("/family")
+    void family(
+            Callback<List<Family>> callback
+    );
+
+    @GET("/memo/notice")
+    void notice(
+            Callback<List<Notice>> callback
+    );
+
+    @GET("/memo/normal")
+    void normal(
+            Callback<List<Normal>> callback
     );
 
 }

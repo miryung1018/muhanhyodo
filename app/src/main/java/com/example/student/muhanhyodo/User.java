@@ -5,16 +5,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Created by Miryung Yeon on 2015-10-09.
+ * Created by Miryung Yeon on 2015-10-10.
  */
+
 @EqualsAndHashCode
-public class Address {
-    @Getter @Setter
-    int id;
+public class User {
+
     @Getter @Setter
     String name;
     @Getter @Setter
     String tel;
-    @Getter @Setter
-    String address;
 }

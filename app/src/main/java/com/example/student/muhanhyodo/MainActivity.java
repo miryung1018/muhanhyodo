@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
 //                        //Gson Converter 설정
 //                .setConverter(new GsonConverter(gson))
 //                .build();
+
         RestAdapter restAdapter = new RestAdapter.Builder()
                 //로그 레벨 설정
                 .setLogLevel(RestAdapter.LogLevel.FULL)
@@ -66,19 +67,100 @@ public class MainActivity extends AppCompatActivity {
         /**
          * 통신 콜백 메서드 Callback<List<Address>> callback
          */
-        restAdapter.create(MuhanhyodoService.class).address(new Callback<List<Address>>() {
+       restAdapter.create(MuhanhyodoService.class).address(new Callback<List<Address>>() {
+           @Override
+           public void success(List<Address> addresses, Response response) {
+               Address a;
+               for (int i = 0; i < addresses.size(); i++) {
+                   a = addresses.get(i);
+                   Log.i(TAG, "[" + (i + 1) + "] " + a.getName() + " / " + a.getTel() + " / " + a.getId() + " / " + a.getAddress());
+               }
+           }
+
+           @Override
+           public void failure(RetrofitError error) {
+               Log.i(TAG, "무슨 영문인지 이해할 수 없음");
+           }
+       });
+
+
+            restAdapter.create(MuhanhyodoService.class).medicine(new Callback<List<Medicine>>() {
+                @Override
+                public void success(List<Medicine> medicine, Response response) {
+                    Medicine m;
+                    for (int i = 0; i < medicine.size(); i++) {
+                        m = medicine.get(i);
+                        Log.i(TAG, "[" + (i + 1) + "] " + m.getId() + " / " + m.getTitle() + " / " + m.getMorning() + " / " + m.getAfternoon() + " / " + m.getEvening() + " / " + m.getSound());
+                    }
+                }
+
+                @Override
+                public void failure(RetrofitError error) {
+                    Log.i(TAG, "무슨 영문인지 이해할 수 없음");
+                }
+            });
+
+        restAdapter.create(MuhanhyodoService.class).user(new Callback<List<User>>() {
             @Override
-            public void success(List<Address> addresses, Response response) {
-                Address a;
-                for( int i = 0; i < addresses.size(); i ++){
-                    a = addresses.get(i);
-                    Log.i(TAG, "[" + (i+1) + "] " + a.getName() + " / " + a.getTel() + " / " + a.getId() );
+            public void success(List<User> user, Response response) {
+                User u;
+                for (int i = 0; i < user.size(); i++) {
+                    u = user.get(i);
+                    Log.i(TAG, "[" + (i + 1) + "] " + u.getName() + " / " + u.getTel());
                 }
             }
 
             @Override
             public void failure(RetrofitError error) {
-                    Log.i(TAG, "무슨말인지 이해할 수 없음");
+                Log.i(TAG, "무슨 영문인지 이해할 수 없음");
+            }
+        });
+
+        restAdapter.create(MuhanhyodoService.class).family(new Callback<List<Family>>() {
+            @Override
+            public void success(List<Family> family, Response response) {
+                Family f;
+                for (int i = 0; i < family.size(); i++) {
+                    f = family.get(i);
+                    Log.i(TAG, "[" + (i + 1) + "] " + f.getName() + " / " + f.getTel());
+                }
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                Log.i(TAG, "무슨 영문인지 이해할 수 없음");
+            }
+        });
+
+        restAdapter.create(MuhanhyodoService.class).notice(new Callback<List<Notice>>() {
+            @Override
+            public void success(List<Notice> notice, Response response) {
+                Notice n;
+                for (int i = 0; i < notice.size(); i++) {
+                    n = notice.get(i);
+                    Log.i(TAG, "[" + (i + 1) + "] " + n.getId() + " / " + n.getTitle());
+                }
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                Log.i(TAG, "무슨 영문인지 이해할 수 없음");
+            }
+        });
+
+        restAdapter.create(MuhanhyodoService.class).normal(new Callback<List<Normal>>() {
+            @Override
+            public void success(List<Normal> normal, Response response) {
+                Normal m;
+                for (int i = 0; i < normal.size(); i++) {
+                    m = normal.get(i);
+                    Log.i(TAG, "[" + (i + 1) + "] " + m.getId() + " / " + m.getTitle() + " / " + m.getChk());
+                }
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                Log.i(TAG, "무슨 영문인지 이해할 수 없음");
             }
         });
     }
