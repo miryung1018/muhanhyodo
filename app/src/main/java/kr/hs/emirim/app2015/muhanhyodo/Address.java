@@ -1,4 +1,4 @@
-package com.example.student.muhanhyodo;
+package kr.hs.emirim.app2015.muhanhyodo;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.example.student.muhanhyodo;
+package kr.hs.emirim.app2015.muhanhyodo;
 
 /**
  * Created by Student on 2015-10-09.

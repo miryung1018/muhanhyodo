@@ -1,11 +1,10 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
-
+    buildToolsVersion '23.0.1'
     defaultConfig {
-        applicationId "com.example.student.muhanhyodo"
+        applicationId "kr.hs.emirim.app2015.muhanhyodo"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
@@ -17,14 +16,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
+    compile 'com.google.android.gms:play-services-gcm:8.1.0'
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.android.support:design:23.0.1'
-    provided "org.projectlombok:lombok:1.12.6"
+    provided 'org.projectlombok:lombok:1.12.6'
     compile 'com.squareup.retrofit:retrofit:1.9.0'
 }
 

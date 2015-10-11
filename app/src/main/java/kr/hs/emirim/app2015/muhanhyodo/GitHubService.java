@@ -1,9 +1,7 @@
-package com.example.student.muhanhyodo;
+package kr.hs.emirim.app2015.muhanhyodo;
 
 import java.util.List;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.EqualsAndHashCode;
+
 import retrofit.Callback;
 import retrofit.http.GET;
 import retrofit.http.Path;
