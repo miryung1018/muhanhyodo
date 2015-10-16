@@ -1,4 +1,4 @@
-package com.example.student.muhanhyodo;
+package kr.hs.emirim.app2015.muhanhyodo;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -9,10 +9,23 @@ import lombok.Setter;
  */
 
 @EqualsAndHashCode
-public class Notice {
+public class Medicine {
 
     @Getter @Setter
     int id;
     @Getter @Setter
     String title;
+
+    @Getter @Setter
+    int morning;
+
+    @Getter @Setter
+    int afternoon;
+
+    @Getter @Setter
+    int evening;
+
+    @Getter @Setter
+    String sound;
+
 }

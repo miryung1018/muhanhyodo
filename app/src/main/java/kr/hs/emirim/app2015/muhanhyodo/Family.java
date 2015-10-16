@@ -1,4 +1,4 @@
-package com.example.student.muhanhyodo;
+package kr.hs.emirim.app2015.muhanhyodo;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -9,14 +9,10 @@ import lombok.Setter;
  */
 
 @EqualsAndHashCode
-public class Normal {
+public class Family {
 
     @Getter @Setter
-    int id;
+    String name;
     @Getter @Setter
-    String title;
-    @Getter @Setter
-    int chk;
-
-
+    String tel;
 }

@@ -1,15 +1,10 @@
-package com.example.student.muhanhyodo;
+package kr.hs.emirim.app2015.muhanhyodo;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
@@ -67,38 +62,39 @@ public class MainActivity extends AppCompatActivity {
         /**
          * 통신 콜백 메서드 Callback<List<Address>> callback
          */
-       restAdapter.create(MuhanhyodoService.class).address(new Callback<List<Address>>() {
-           @Override
-           public void success(List<Address> addresses, Response response) {
-               Address a;
-               for (int i = 0; i < addresses.size(); i++) {
-                   a = addresses.get(i);
-                   Log.i(TAG, "[" + (i + 1) + "] " + a.getName() + " / " + a.getTel() + " / " + a.getId() + " / " + a.getAddress());
-               }
-           }
-
-           @Override
-           public void failure(RetrofitError error) {
-               Log.i(TAG, "무슨 영문인지 이해할 수 없음");
-           }
-       });
-
-
-            restAdapter.create(MuhanhyodoService.class).medicine(new Callback<List<Medicine>>() {
-                @Override
-                public void success(List<Medicine> medicine, Response response) {
-                    Medicine m;
-                    for (int i = 0; i < medicine.size(); i++) {
-                        m = medicine.get(i);
-                        Log.i(TAG, "[" + (i + 1) + "] " + m.getId() + " / " + m.getTitle() + " / " + m.getMorning() + " / " + m.getAfternoon() + " / " + m.getEvening() + " / " + m.getSound());
-                    }
+        Log.i(TAG, "address 가져오기");
+        restAdapter.create(MuhanhyodoService.class).address(new Callback<List<Address>>() {
+            @Override
+            public void success(List<Address> addresses, Response response) {
+                Address a;
+                for (int i = 0; i < addresses.size(); i++) {
+                    a = addresses.get(i);
+                    Log.i(TAG, "[" + (i + 1) + "] " + a.getName() + " / " + a.getTel() + " / " + a.getId() + " / " + a.getAddress());
                 }
+            }
 
-                @Override
-                public void failure(RetrofitError error) {
-                    Log.i(TAG, "무슨 영문인지 이해할 수 없음");
+            @Override
+            public void failure(RetrofitError error) {
+                Log.i(TAG, "무슨 영문인지 이해할 수 없음");
+            }
+        });
+
+        Log.i(TAG, "address 가져오기");
+        restAdapter.create(MuhanhyodoService.class).medicine(new Callback<List<Medicine>>() {
+            @Override
+            public void success(List<Medicine> medicine, Response response) {
+                Medicine m;
+                for (int i = 0; i < medicine.size(); i++) {
+                    m = medicine.get(i);
+                    Log.i(TAG, "[" + (i + 1) + "] " + m.getId() + " / " + m.getTitle() + " / " + m.getMorning() + " / " + m.getAfternoon() + " / " + m.getEvening() + " / " + m.getSound());
                 }
-            });
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                Log.i(TAG, "무슨 영문인지 이해할 수 없음");
+            }
+        });
 
         restAdapter.create(MuhanhyodoService.class).user(new Callback<List<User>>() {
             @Override
