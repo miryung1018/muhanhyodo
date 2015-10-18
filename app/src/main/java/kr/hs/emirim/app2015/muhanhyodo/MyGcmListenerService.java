@@ -20,6 +20,8 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -30,6 +32,9 @@ import com.google.android.gms.gcm.GcmListenerService;
 public class MyGcmListenerService extends GcmListenerService {
 
     private static final String TAG = "MyGcmListenerService";
+
+    AudioManager audioManager;
+    MediaPlayer mediaPlayer;
 
     /**
      * Called when message is received.
@@ -45,7 +50,29 @@ public class MyGcmListenerService extends GcmListenerService {
         Log.d(TAG, "From: " + from);
         Log.d(TAG, "Message: " + message);
 
+        String sound = data.getString("sound");
+
+
         if (from.startsWith("/topics/")) {
+
+            mediaPlayer = new MediaPlayer();
+            try {
+                AudioManager audioManager = (AudioManager) this.getSystemService(Context.AUDIO_SERVICE);
+
+// audioManager.setStreamVolume(볼륨컨트롤, 뷰륨크기, 볼륨상태(audioManager.FLAG...으로 시작하는 인자들...) );
+
+                audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC), 0);
+                audioManager.setStreamVolume(AudioManager.STREAM_SYSTEM, audioManager.getStreamMaxVolume(AudioManager.STREAM_SYSTEM), 0);
+
+                //대상 파일 지정
+                mediaPlayer.setVolume(1.0f, 1.0f);
+                mediaPlayer.setDataSource(sound);
+                mediaPlayer.prepare();
+                mediaPlayer.start();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+
             // message received from some topic.
         } else {
             // normal downstream message.

@@ -28,4 +28,7 @@ public class Medicine {
     @Getter @Setter
     String sound;
 
+    @Getter @Setter
+    String message;
+
 }

@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
                 Medicine m;
                 for (int i = 0; i < medicine.size(); i++) {
                     m = medicine.get(i);
-                    Log.i(TAG, "[" + (i + 1) + "] " + m.getId() + " / " + m.getTitle() + " / " + m.getMorning() + " / " + m.getAfternoon() + " / " + m.getEvening() + " / " + m.getSound());
+                    Log.i(TAG, "[" + (i + 1) + "] " + m.getId() + " / " + m.getTitle() + " / " + m.getMorning() + " / " + m.getAfternoon() + " / " + m.getEvening() + " / " + m.getSound()+" / "+m.getMessage());
                 }
             }
 
