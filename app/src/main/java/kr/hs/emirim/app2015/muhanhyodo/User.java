@@ -1,7 +1,10 @@
 package kr.hs.emirim.app2015.muhanhyodo;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -9,8 +12,13 @@ import lombok.Setter;
  */
 
 @EqualsAndHashCode
-public class User {
 
+public class User {
+    public User(){ }
+    public User(String name, String tel){
+        this.name = name;
+        this.tel = tel;
+    }
     @Getter @Setter
     String name;
     @Getter @Setter

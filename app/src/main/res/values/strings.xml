@@ -1,10 +1,15 @@
 <resources>
-    <string name="app_name">muhanhyodo</string>
-    <string name="action_settings">Settings</string>
-    <string name="gcm_send_message">Token retrieved and sent to server! You can now use gcmsender to
-        send downstream messages to this app.</string>
-    <string name="registering_message">Generating InstanceID token...</string>
-    <string name="token_error_message">An error occurred while either fetching the InstanceID token,
-        sending the fetched token to the server or subscribing to the PubSub topic. Please try
-        running the sample again.</string>
+    <string name="app_name">무한효도</string>
+    <string name="action_settings">설정</string>
+    <string name="gcm_send_message">푸시 사용을 위한 등록이 정상적으로 완료되었습니다.</string>
+    <string name="registering_message">푸시 사용을 위한 등록작업 중입니다...</string>
+    <string name="token_error_message">푸시 사용자 등록을 위한 작업 중에 오류가 났습니다. 다시 시도해보세요.</string>
+    <string name="title_activity_tutorial01">TutorialActivity01</string>
+    <string name="title_activity_select_mode">SelectModeActivity</string>
+    <string name="title_activity_input_grand_mother_data">InputGrandMotherDataActivity</string>
+    <string name="title_activity_input_family_data">InputFamilyDataActivity</string>
+    <string name="title_activity_main_menu">MainMenuActivity</string>
+    <string name="title_activity_todo_list">TodoListActivity</string>
+    <string name="title_activity_medicine_list">MedicineListActivity</string>
+    <string name="title_activity_address_list">AddressListActivity</string>
 </resources>

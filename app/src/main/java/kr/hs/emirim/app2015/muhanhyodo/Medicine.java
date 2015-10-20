@@ -31,4 +31,19 @@ public class Medicine {
     @Getter @Setter
     String message;
 
+    @Getter @Setter
+    int user_id;
+
+    public Medicine(int id, String title, int morning, int afternoon, int evening, String sound, String message, int user_id ) {
+        this.id = id;
+        this.title = title;
+        this.morning = morning;
+        this.afternoon = afternoon;
+        this.evening = evening;
+        this.sound = sound;
+        this.message = message;
+        this.user_id = user_id;
+    }
+
+
 }
