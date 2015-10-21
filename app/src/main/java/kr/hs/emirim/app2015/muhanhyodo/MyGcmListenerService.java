@@ -20,6 +20,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.RingtoneManager;
@@ -51,9 +52,13 @@ public class MyGcmListenerService extends GcmListenerService {
         Log.d(TAG, "Message: " + message);
 
         String sound = data.getString("sound");
+        int id = data.getInt("id");
 
+        SharedPreferences prefs = getSharedPreferences("muhanhyodo", MODE_PRIVATE);
+        int user_id = prefs.getInt("user_id", -1);
 
-        if (from.startsWith("/topics/")) {
+        if (id == user_id) {
+            sendNotification(message);
 
             mediaPlayer = new MediaPlayer();
             try {
@@ -90,7 +95,7 @@ public class MyGcmListenerService extends GcmListenerService {
          * In some cases it may be useful to show a notification indicating to the user
          * that a message was received.
          */
-        sendNotification(message);
+
         // [END_EXCLUDE]
     }
     // [END receive_message]
