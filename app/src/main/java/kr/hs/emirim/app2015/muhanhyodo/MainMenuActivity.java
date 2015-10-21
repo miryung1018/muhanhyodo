@@ -46,7 +46,7 @@ public class MainMenuActivity extends AppCompatActivity {
         m_user_tel = (TextView)findViewById(R.id.user_tel);
 
         SharedPreferences prefs = getSharedPreferences("muhanhyodo", MODE_PRIVATE);
-        m_user_id = prefs.getInt("user_id", 0);
+        m_user_id = prefs.getInt("user_id", -1);
 
         /**
          * Gson 컨버터 이용

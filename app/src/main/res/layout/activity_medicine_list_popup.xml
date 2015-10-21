@@ -1,0 +1,101 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    tools:context="kr.hs.emirim.app2015.muhanhyodo.Activity_Med">
+
+    <LinearLayout
+        android:id="@+id/layout_root"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="약 이름"></TextView>
+
+        <EditText
+            android:id="@+id/EtmName"
+            android:layout_width="294dp"
+            android:layout_height="35dip"
+            android:layout_marginRight="10dp" />
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="세부 사항"></TextView>
+
+        <EditText
+            android:id="@+id/Etdetail"
+            android:layout_width="294dp"
+            android:layout_height="35dip"
+            android:layout_weight="0.31" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="녹음"></TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnRecord"
+                android:layout_width="65sp"
+                android:layout_height="65sp"
+                android:background="@drawable/record_1" />
+
+            <Button
+                android:id="@+id/btnRecordStop"
+                android:layout_width="65sp"
+                android:layout_height="65sp"
+                android:background="@drawable/stop_1" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="알람 설정"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="  아침           점심           저녁"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_root"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnMorning"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:background="@drawable/alarm" />
+
+        <Button
+            android:id="@+id/btnAfternoon"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:background="@drawable/alarm" />
+
+        <Button
+            android:id="@+id/btnEvening"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:background="@drawable/alarm" />
+    </LinearLayout>
+
+</RelativeLayout>
+
+

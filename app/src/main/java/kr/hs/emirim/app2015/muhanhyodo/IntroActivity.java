@@ -69,16 +69,16 @@ public class IntroActivity extends AppCompatActivity {
         }
 
         SharedPreferences prefs = getSharedPreferences("muhanhyodo", MODE_PRIVATE);
-        int user_id = prefs.getInt("user_id", 0);
+        int user_id = prefs.getInt("user_id", -1);
 
         Log.d(TAG, "user_id는 " + user_id);
         if (user_id < 0) {
-            Log.d(TAG, "최초 가입이므로 등록화면으로 넘어감");
+            Log.d(TAG, "최초 실행이므로 등록화면으로 넘어감");
             Snackbar.make( findViewById(R.id.layout) , R.string.first_user , Snackbar.LENGTH_LONG).show();
-            m_intent = new Intent(IntroActivity.this, InputGrandMotherDataActivity.class);
+            m_intent = new Intent(IntroActivity.this, SelectModeActivity.class);
         } else {
             Log.d(TAG, "등록된 사용자이므로 리스트로 넘어감");
-            Snackbar.make( findViewById(R.id.layout) , R.string.welcome, Snackbar.LENGTH_SHORT).show();
+            //Snackbar.make( findViewById(R.id.layout) , R.string.welcome, Snackbar.LENGTH_SHORT).show();
             m_intent = new Intent(IntroActivity.this, MainMenuActivity.class);
         }
 

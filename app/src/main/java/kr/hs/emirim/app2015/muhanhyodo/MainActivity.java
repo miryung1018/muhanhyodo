@@ -250,45 +250,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        User user = new User("미령할머니", "010-1234-1232");
-        restAdapter.create(MuhanhyodoService.class).createUser(user, new Callback<User>() {
-            @Override
-            public void success(User user, Response response) {
-                Log.d(TAG, "user 추가하기");
-                Log.d(TAG, user.toString() );
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-                Log.d(TAG, "user 추가하기 에러!" + error.getMessage() );
-            }
-        });
-
-        TypedFile typedFile = new TypedFile(
-                "multipart/form-data",
-                new File(Environment.getExternalStorageDirectory() + "/0_1445157306771420.mp3")
-        );
-        Medicine medicine = new Medicine(0, "아스피린", 1, 1, 1, "", "아스피린 드세요~", 0);
-        restAdapter.create(MuhanhyodoService.class).createMedicine(
-                typedFile,
-                medicine.getTitle(),
-                medicine.getMorning(),
-                medicine.getAfternoon(),
-                medicine.getEvening(),
-                medicine.getMessage(),
-                medicine.getUser_id(),
-                new Callback<Medicine>() {
-            @Override
-            public void success(Medicine medicine, Response response) {
-                Log.d(TAG, "약 추가하기");
-                Log.d(TAG, medicine.getMessage());
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-                Log.d(TAG, "약 추가하기 에러!" + error.getMessage());
-            }
-        });
 
       }
     }

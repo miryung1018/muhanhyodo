@@ -10,4 +10,54 @@
     tools:showIn="@layout/activity_select_mode"
     tools:context="kr.hs.emirim.app2015.muhanhyodo.SelectModeActivity">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:background="@drawable/user"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+
+        <RadioGroup
+            android:layout_gravity="center"
+            android:id="@+id/group_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <RadioButton
+                android:id="@+id/radio_teacher"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:button="@drawable/radio_1"
+                android:checked="true"/>
+            <RadioButton
+                android:id="@+id/radio_student"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:button="@drawable/radio"
+                android:checked="true"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+        <Button
+            android:layout_marginTop="55dp"
+            android:id="@+id/btnOK"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/next"
+            />
+
+    </LinearLayout>
 </RelativeLayout>

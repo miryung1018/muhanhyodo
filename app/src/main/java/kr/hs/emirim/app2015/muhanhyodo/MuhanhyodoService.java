@@ -38,9 +38,12 @@ public interface MuhanhyodoService {
             Callback<List<Address>> callback
     );
 
+    @Multipart
     @POST("/user")
     void createUser(
-            @Body User user,
+            @Part("name") String name,
+            @Part("tel") String tel,
+            @Part("iid") String iid,
             Callback<User> callback
     );
 
@@ -107,15 +110,30 @@ public interface MuhanhyodoService {
 
 
     @Multipart
-    @POST("/medicine")
+    @POST("/user/{user_id}/medicine")
     void createMedicine(
+            @Path("user_id") int user_id,
             @Part("file") TypedFile sound,
             @Part("title") String title,
             @Part("morning") int morning,
             @Part("afternoon") int afternoon,
             @Part("evening") int evening,
             @Part("message") String message,
-            @Part("user_id") int user_id,
+            Callback<Medicine> callback
+    );
+
+
+    @Multipart
+    @POST("/user/{user_id}/medicine/delete")
+    void deleteMedicine(
+            @Path("user_id") int user_id,
+            @Part("id") int id,
+            @Part("title") String title,
+            @Part("morning") int morning,
+            @Part("afternoon") int afternoon,
+            @Part("evening") int evening,
+            @Part("sound") String sound,
+            @Part("message") String message,
             Callback<Medicine> callback
     );
 

@@ -15,12 +15,21 @@ import lombok.Setter;
 
 public class User {
     public User(){ }
-    public User(String name, String tel){
+    public User(int id, String name, String tel, String iid){
+        this.id = id;
         this.name = name;
         this.tel = tel;
+        this.iid = iid;
     }
     @Getter @Setter
+    int id;
+
+    @Getter @Setter
     String name;
+
     @Getter @Setter
     String tel;
+
+    @Getter @Setter
+    String iid;
 }
