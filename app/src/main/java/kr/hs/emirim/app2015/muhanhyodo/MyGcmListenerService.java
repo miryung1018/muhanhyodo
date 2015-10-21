@@ -52,11 +52,11 @@ public class MyGcmListenerService extends GcmListenerService {
         Log.d(TAG, "Message: " + message);
 
         String sound = data.getString("sound");
-        int id = data.getInt("id");
+        int id = Integer.parseInt(data.getString("id"));
 
         SharedPreferences prefs = getSharedPreferences("muhanhyodo", MODE_PRIVATE);
         int user_id = prefs.getInt("user_id", -1);
-
+        Log.d(TAG, "id " + id + " / usre_id " + user_id );
         if (id == user_id) {
             sendNotification(message);
 
