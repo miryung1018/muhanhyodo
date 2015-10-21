@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">무한효도</string>
+    <string name="welcome">안녕하세요~</string>
+    <string name="first_user">처음 오셨네요~ 등록 화면으로 가겠습니다.</string>
+    <string name="loading">불러오는 중입니다...</string>
     <string name="action_settings">설정</string>
     <string name="gcm_send_message">푸시 사용을 위한 등록이 정상적으로 완료되었습니다.</string>
     <string name="registering_message">푸시 사용을 위한 등록작업 중입니다...</string>

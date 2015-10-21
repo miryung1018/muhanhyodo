@@ -25,6 +25,13 @@ public interface MuhanhyodoService {
 //            Callback<List<Contributor>> callback
 //    );
 
+    @GET("/user/{user_id}")
+    void user(
+            @Path("user_id") int user_id,
+            Callback<User> callback
+    );
+
+
     @GET("/user/{user_id}/addresses")
     void address(
             @Path("user_id") int user_id,
@@ -36,6 +43,68 @@ public interface MuhanhyodoService {
             @Body User user,
             Callback<User> callback
     );
+
+    @Multipart
+    @POST("/user/{user_id}/address")
+    void createAddress(
+            @Path("user_id") int user_id,
+            @Part("tel") String tel,
+            @Part("name") String name,
+            @Part("address") String address,
+            Callback<Address> callback
+    );
+
+    @Multipart
+    @POST("/user/{user_id}/address/delete")
+    void deleteAddress(
+            @Path("user_id") int user_id,
+            @Part("id") int id,
+            @Part("tel") String tel,
+            @Part("name") String name,
+            @Part("address") String address,
+            Callback<Address> callback
+    );
+
+    @Multipart
+    @POST("/user/{user_id}/memo/notice")
+    void createNotice(
+            @Path("user_id") int user_id,
+            @Part("title") String title,
+            Callback<Notice> callback
+    );
+
+    @Multipart
+    @POST("/user/{user_id}/memo/notice/delete")
+    void deleteNotice(
+            @Path("user_id") int user_id,
+            @Part("id") int id,
+            @Part("title") String title,
+            Callback<Notice> callback
+    );
+
+
+
+
+    @Multipart
+    @POST("/user/{user_id}/memo/normal")
+    void createNormal(
+            @Path("user_id") int user_id,
+            @Part("title") String title,
+            @Part("chk") int chk,
+            Callback<Normal> callback
+    );
+
+    @Multipart
+    @POST("/user/{user_id}/memo/normal/delete")
+    void deleteNormal(
+            @Path("user_id") int user_id,
+            @Part("id") int id,
+            @Part("title") String title,
+            @Part("chk") int chk,
+            Callback<Normal> callback
+    );
+
+
 
     @Multipart
     @POST("/medicine")
@@ -57,7 +126,7 @@ public interface MuhanhyodoService {
     );
 
     @GET("/users")
-    void user(
+    void userList(
             Callback<List<User>> callback
     );
 

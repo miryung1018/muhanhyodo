@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_dialog"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:weightSum="1">
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/FixRbtn"
+            android:textColor="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="고정된 알림"
+            android:checked="false" />
+
+        <RadioButton
+            android:id="@+id/DeadRbtn"
+            android:textColor="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="마감일이 있는 알림"
+            android:checked="false" />
+
+    </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/TvDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="내용"></TextView>
+
+    <EditText
+        android:id="@+id/EtDetail"
+        android:layout_width="310dp"
+        android:layout_height="35dip"
+        android:layout_weight="0.47"
+        />
+</LinearLayout>
+

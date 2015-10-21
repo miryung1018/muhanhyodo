@@ -10,7 +10,13 @@ import lombok.Setter;
 
 @EqualsAndHashCode
 public class Normal {
-
+    public Normal() {
+    }
+    public Normal( int id, String title, int chk) {
+        this.id = id;
+        this.title = title;
+        this.chk = chk;
+    }
     @Getter @Setter
     int id;
     @Getter @Setter

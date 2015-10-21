@@ -1,0 +1,20 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root" android:orientation="vertical"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:padding="10dp"
+    android:weightSum="1">
+    <TextView android:text="이름" android:id="@+id/TextView01"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+    <EditText android:id="@+id/image" android:layout_width="294dp"
+        android:layout_height="35dip" android:layout_marginRight="10dp"  android:textColor="#ff555aff" />
+    <TextView android:text="전화번호" android:id="@+id/TextView03"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+    <EditText android:id="@+id/phone" android:layout_width="294dp"
+        android:layout_height="35dip" android:layout_marginRight="10dp"  android:textColor="#ff555aff" />
+    <TextView android:text="주소" android:id="@+id/TextView02"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+    <EditText android:id="@+id/text" android:layout_width="294dp"
+        android:layout_height="35dip" android:textColor="#ff555aff"
+        android:layout_weight="0.31" />
+</LinearLayout>
+

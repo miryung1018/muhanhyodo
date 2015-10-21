@@ -196,23 +196,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Log.i(TAG, "users 가져오기");
-        restAdapter.create(MuhanhyodoService.class).user(new Callback<List<User>>() {
-            @Override
-            public void success(List<User> user, Response response) {
-                User u;
-                for (int i = 0; i < user.size(); i++) {
-                    u = user.get(i);
-                    Log.i(TAG, "[" + (i + 1) + "] " + u.getName() + " / " + u.getTel());
-                }
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-                Log.i(TAG, " user 명단 가져오기 에러  ");
-            }
-        });
-
         Log.i(TAG, "family 가져오기");
         restAdapter.create(MuhanhyodoService.class).family(m_user_id, new Callback<List<Family>>() {
             @Override

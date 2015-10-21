@@ -11,6 +11,12 @@ import lombok.Setter;
 @EqualsAndHashCode
 public class Notice {
 
+    public Notice() {
+    }
+    public Notice( int id, String title) {
+        this.id = id;
+        this.title = title;
+    }
     @Getter @Setter
     int id;
     @Getter @Setter
