@@ -3,6 +3,7 @@
     android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/layout_popup">
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/TodoTv"
         android:layout_gravity="left"
         android:layout_width="wrap_content"

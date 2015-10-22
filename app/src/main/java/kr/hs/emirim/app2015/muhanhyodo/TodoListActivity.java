@@ -155,14 +155,16 @@ public class TodoListActivity extends AppCompatActivity {
                 // Log.d(TAG, "이름 : " + mUser.getName());
                 TodoTv.setText(notice.getTitle());
 
-                aDialog.setPositiveButton("삭제", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        //입력된 값 지우기
-
-                        showDialog(1);
-
-                    }
-                });
+                if(!m_isGrand)
+                {
+                    aDialog.setPositiveButton("삭제", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            //입력된 값 지우기
+                            // e1.setText("");
+                            showDialog(1);
+                        }
+                    });
+                }
                 aDialog.setNegativeButton("취소", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                     }
@@ -189,15 +191,16 @@ public class TodoListActivity extends AppCompatActivity {
                 // Log.d(TAG, "이름 : " + mUser.getName());
                 TodoTv.setText(normal.getTitle());
 
-                aDialog.setPositiveButton("삭제", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        //입력된 값 지우기
-                        // e1.setText("");
-
-                        showDialog(2);
-
-                    }
-                });
+                if(!m_isGrand)
+                {
+                    aDialog.setPositiveButton("삭제", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            //입력된 값 지우기
+                            // e1.setText("");
+                            showDialog(1);
+                        }
+                    });
+                }
                 aDialog.setNegativeButton("취소", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                     }

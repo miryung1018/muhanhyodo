@@ -196,16 +196,16 @@ public class MedicineListActivity extends AppCompatActivity {
             detailTv.setText(mMed.getMessage());
             detailTv.setMovementMethod(new ScrollingMovementMethod());
 
-            aDialog.setPositiveButton("삭제", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    //입력된 값 지우기
-                    // e1.setText("");
-
-                    showDialog(1);
-                    //getWindow().setBackgroundDrawable(new PaintDrawable(Color.TRANSPARENT));
-
-                }
-            });
+            if(!m_isGrand)
+            {
+                aDialog.setPositiveButton("삭제", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        //입력된 값 지우기
+                        // e1.setText("");
+                        showDialog(1);
+                    }
+                });
+            }
             aDialog.setNegativeButton("취소", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                 }
